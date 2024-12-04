@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lviter/omega-config.git
+          clone-on-start: true
+          search-paths: 'omega-config'
+  security:
+    user:
+      name: configure
+      password: 123456
+
+
+# 测试访问地址：http://127.0.0.1:8888/omega-config/dev/main/application.yml
